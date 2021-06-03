@@ -5,6 +5,8 @@ import com.hellowx.start.User;
 import com.hellowx.start.UserService;
 import com.hellowx.start.UserServiceImpl;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Created by IntelliJ IDEA.
@@ -24,5 +26,13 @@ public class TestSpring {
         UserService userService = (UserService) BeanFactory.getBean("userServiceNew");
         userService.insert(new User());
         userService.queryUserByName("张三");
+
+    }
+
+    @Test
+    public void test3(){
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("/applicationContext.xml");
+        User user = (User) ctx.getBean("user");
+        System.out.println("user = " + user);
     }
 }

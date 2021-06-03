@@ -24,6 +24,8 @@
 <!--    版本-->
     <junit.version>4.11</junit.version>
     <lombok.version>1.18.18</lombok.version>
+    <spring-context.version>5.2.10.RELEASE</spring-context.version>
+    <spring-webmvc.version>5.2.10.RELEASE</spring-webmvc.version>
   </properties>
 
   <dependencyManagement>
@@ -38,6 +40,16 @@
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
         <version>${lombok.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring-context.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${spring-webmvc.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
