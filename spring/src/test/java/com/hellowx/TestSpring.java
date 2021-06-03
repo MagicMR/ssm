@@ -1,5 +1,6 @@
 package com.hellowx;
 
+import com.hellowx.IOC.Account;
 import com.hellowx.start.BeanFactory;
 import com.hellowx.start.User;
 import com.hellowx.start.UserService;
@@ -34,5 +35,12 @@ public class TestSpring {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("/applicationContext.xml");
         User user = (User) ctx.getBean("user");
         System.out.println("user = " + user);
+    }
+
+    @Test
+    public void test4(){
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("/applicationContext.xml");
+        Account acc = ctx.getBean(Account.class);
+        System.out.println("acc = " + acc);
     }
 }

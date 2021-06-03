@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd"
 >
     <bean id="user" class="com.hellowx.start.User"/>
+
+<!--    <bean id="dog" class="com.hellowx.IOC.Dog" p:name="dog" p:age="1"/>-->
+    <bean id="dog" class="com.hellowx.IOC.Dog">
+        <constructor-arg value="dog"/>
+        <constructor-arg type="java.lang.Integer" value="10"/>
+    </bean>
+
+    <bean id="account" class="com.hellowx.IOC.Account">
+        <property name="username" value="account"/>
+        <property name="age" value="10"/>
+        <property name="pet" ref="dog"/>
+        <property name="hobby">
+            <list>
+                <value>睡觉</value>
+                <value>敲代码</value>
+            </list>
+        </property>
+        <property name="pro">
+            <props>
+                <prop key="A">a</prop>
+                <prop key="B">b</prop>
+            </props>
+        </property>
+    </bean>
 </beans>
